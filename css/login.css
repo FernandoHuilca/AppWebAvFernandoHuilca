@@ -1,0 +1,186 @@
+/* ============================================================
+   PoliMusic - Login (tonos pastel)
+   ============================================================ */
+:root {
+  --bg: #F7F5FC;
+  --surface: #FFFFFF;
+  --ink: #332E45;
+  --ink-soft: #6E6884;
+  --line: #E6E1F2;
+  --pastel-1: #CDB9F5;
+  --pastel-2: #BFE8D8;
+  --pastel-3: #FDD9C9;
+  --pastel-4: #C9E3F9;
+  --pastel-5: #FBEFC3;
+  --primary: #8B79CC;
+  --primary-strong: #7461BD;
+  --primary-soft: #EFE9FC;
+  --mint: #4FC79F;
+  --mint-soft: #E2F6EE;
+  --danger: #E96A5B;
+  --danger-soft: #FDE8E4;
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(84, 70, 134, 0.10);
+  --shadow-sm: 0 4px 14px rgba(84, 70, 134, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body.login-body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(900px 500px at -10% -20%, rgba(205, 185, 245, .22), transparent 55%),
+    radial-gradient(800px 500px at 110% 120%, rgba(191, 232, 216, .25), transparent 55%),
+    var(--bg);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+img { max-width: 100%; }
+
+.login-split {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  width: min(1040px, 94vw);
+  min-height: 600px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(84, 70, 134, .18);
+  background: var(--surface);
+}
+
+/* ------------------------------ Panel de marca */
+.brand-panel {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 40px;
+  background: linear-gradient(160deg, #EFE7FE 0%, #E4F4EE 52%, #FDEFE3 100%);
+  border-right: 1px solid var(--line);
+}
+
+.brand-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: .75;
+}
+.blob-1 { width: 240px; height: 240px; background: var(--pastel-1); top: -70px; right: -60px; opacity: .55; }
+.blob-2 { width: 200px; height: 200px; background: var(--pastel-2); bottom: -60px; left: -50px; opacity: .6; }
+.blob-3 { width: 110px; height: 110px; background: var(--pastel-3); bottom: 90px; right: 40px; opacity: .5; }
+
+.brand-content { position: relative; text-align: center; max-width: 380px; }
+.brand-logo { display: inline-block; margin-bottom: 12px; filter: drop-shadow(0 10px 24px rgba(51, 46, 69, .35)); }
+.brand-title { font-size: 40px; font-weight: 800; letter-spacing: .4px; margin: 0 0 8px; }
+.brand-title span { color: var(--primary-strong); }
+.brand-tagline { color: var(--ink-soft); margin: 0 0 26px; font-size: 15.5px; }
+
+.brand-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+.brand-features li {
+  background: rgba(255, 255, 255, .78);
+  border: 1px solid rgba(255, 255, 255, .9);
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 13.5px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ------------------------------ Formulario */
+.form-panel { display: grid; place-items: center; padding: 34px; background: var(--surface); }
+
+.login-card { width: min(420px, 100%); }
+
+.login-card-head { text-align: center; margin-bottom: 8px; }
+.brand-mini { font-weight: 800; color: var(--primary-strong); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.login-card-head h2 { font-size: 25px; margin: 8px 0 4px; }
+.login-card-head p { color: var(--ink-soft); margin: 0; }
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin: 14px 0 0;
+  border: 1px solid transparent;
+}
+.alert-ok { background: var(--mint-soft); color: #217054; border-color: #BFE8D8; }
+.alert-error { background: var(--danger-soft); color: #A63C30; border-color: #F3C3BB; }
+
+.field { display: flex; flex-direction: column; gap: 6px; margin: 16px 0 0; }
+.field > span { font-weight: 700; font-size: 13px; }
+.field input {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--ink);
+  background: #FCFBFE;
+  width: 100%;
+  transition: border-color .15s, box-shadow .15s;
+}
+.field input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 121, 204, .18);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: filter .15s, transform .15s;
+}
+.btn:hover { text-decoration: none; }
+
+.btn-primary {
+  background: linear-gradient(115deg, var(--primary) 0%, #6FA8BD 100%);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover { filter: brightness(1.06); transform: translateY(-1px); }
+.btn-block { width: 100%; margin-top: 22px; padding: 12px; font-size: 15px; }
+
+.demo-creds {
+  margin-top: 20px;
+  background: var(--primary-soft);
+  border: 1px solid #DCD0FA;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.demo-creds summary { cursor: pointer; font-weight: 700; color: var(--primary-strong); }
+.demo-creds ul { margin: 10px 0 4px; padding-left: 18px; display: grid; gap: 4px; }
+.demo-creds code { background: #fff; padding: 1px 6px; border-radius: 6px; border: 1px solid var(--line); font-size: 12px; }
+
+/* ------------------------------ Responsive */
+@media (max-width: 880px) {
+  .login-split { grid-template-columns: 1fr; width: min(560px, 94vw); }
+  .brand-panel { padding: 30px 22px; }
+  .brand-panel .brand-features { display: none; }
+  .brand-title { font-size: 30px; }
+  body.login-body { padding: 18px 0; }
+}

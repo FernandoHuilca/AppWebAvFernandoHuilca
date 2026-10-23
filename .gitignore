@@ -1,0 +1,113 @@
+# ============================================================================
+#  .gitignore - PoliMusic (AppWebAvFernandoHuilca)
+#  Objetivo: que GitHub jamas reciba credenciales, contenido del usuario
+#  (audios/fotos), ni archivos temporales o de backup.
+# ============================================================================
+
+
+# ----------------------------------------------------------------------------
+#  1) CREDENCIALES / SECRETS
+#    La cadena de conexion real vive SOLO en tu disco. En GitHub va la
+#    plantilla "config/dbConnection.example.asp" sin contrasenas.
+# ----------------------------------------------------------------------------
+config/dbConnection.asp
+*.env
+*.env.*
+*.secret
+*credentials*.asp
+
+
+# ----------------------------------------------------------------------------
+#  2) BASE DE DATOS - respaldos y dumps locales
+#    El script de esquema (bd/BDD_PoliMusic.sql) SI se sube, pero saneado;
+#    localmente puedes tener dumps/baks y nunca deberian salir.
+# ----------------------------------------------------------------------------
+bd/*.bak
+bd/backup*
+bd/*backup*
+bd/*.dacpac
+bd/*.bacpac
+*.sql.bak
+*.db
+
+
+# ----------------------------------------------------------------------------
+#  3) CONTENIDO DEL USUARIO / MEDIA (no licenciado, personal y pesado)
+#    Audios, fotos de perfil y portadas: solo viven en tu servidor IIS.
+#    Los .gitkeep conservan las carpetas para que un clon armado funcione.
+# ----------------------------------------------------------------------------
+SongFiles/*
+UserImages/*
+PlaylistImages/*
+AlbumImages/*
+ArtistImages/*
+!SongFiles/.gitkeep
+!UserImages/.gitkeep
+!PlaylistImages/.gitkeep
+!AlbumImages/.gitkeep
+!ArtistImages/.gitkeep
+
+
+# ----------------------------------------------------------------------------
+#  4) BACKUPS Y AUTOGUARDADOS DE EDITOR / ASP
+# ----------------------------------------------------------------------------
+*.bak
+*.bak.asp
+*.asp.bak
+*_backup.asp
+*_backup.*
+*~
+*.tmp
+*.swp
+.DS_Store
+
+
+# ----------------------------------------------------------------------------
+#  5) IDE / EDITOR
+# ----------------------------------------------------------------------------
+.vs/
+.idea/
+.vscode/
+*.suo
+*.user
+*.cache/
+.vscode-test/
+# Metadatos de Visual Studio Source Control
+vssver.scc
+mssccprj.scc
+
+
+# ----------------------------------------------------------------------------
+#  6) SISTEMA OPERATIVO / WINDOWS
+# ----------------------------------------------------------------------------
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+# ----------------------------------------------------------------------------
+#  7) LOGS Y ARCHIVOS DE DIAGNOSTICO
+# ----------------------------------------------------------------------------
+*.log
+*.log.*
+logs/
+*.trace
+# WebDeploy / MSBuild temporales
+*.pubxml.user
+obj/
+bin/
+
+
+# ----------------------------------------------------------------------------
+#  8) PUESTAS EN PRODUCCION LOCALES DE ESTE EQUIPO
+#    (todos pueden llamarse distinto en cada maquina; no son parte del repo)
+# ----------------------------------------------------------------------------
+
+
+# Nota final:
+# - config/dbConnection.asp  -> TU password real (nunca en GitHub).
+# - Si por error ya subiste un secreto, cambiar la contrasena de verdad,
+#   porque aunque lo borres despues queda en el historial de git.
