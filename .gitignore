@@ -1,0 +1,82 @@
+﻿################################################################################
+# Visual Studio / .NET - archivos que NO se deben subir al repositorio
+################################################################################
+
+# --- Resultados de compilación ---
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Bb]ld/
+[Dd]ebug/
+[Rr]elease/
+[Pp]ublish/
+x64/
+x86/
+[Aa]rtifacts/
+
+# --- Archivos personales / de sesión de Visual Studio ---
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.userprefs
+*.rsuser
+
+# --- Perfiles de publicación (pueden contener credenciales) ---
+*.pubxml.user
+*.publishproj
+*.publishsettings
+
+# --- Logs y archivos temporales de compilación ---
+*.log
+*.tlog
+*.ilk
+*.cache
+*.tmp
+*.suo.tmp
+
+# --- NuGet ---
+packages/
+*.nupkg
+*.snupkg
+
+# --- Herramientas / IDEs ---
+.vscode/
+.idea/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+.ncrunch*
+.*crunch*.local.xml
+nCrunchTemp_*
+*.ghostdoc.*
+*.codeworkspace
+
+# --- Resultados de pruebas ---
+TestResults/
+[Tt]est[Rr]esult/
+[Dd]ebugPS/
+[Ss]elenium/
+
+# --- Archivos de configuración local de MSBuild ---
+*.binlog
+msbuild.log
+*.wrn
+*.err
+
+# --- Base de datos / respuestos locales ---
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.bak2
+
+# --- Temporales de Office (documentos abiertos) ---
+~$*
+
+# --- Archivos del sistema operativo ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
