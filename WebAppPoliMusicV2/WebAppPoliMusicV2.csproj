@@ -72,6 +72,7 @@
     <Content Include="SongFiles\bensound-adventure.mp3" />
     <Content Include="UserImages\default.jpg" />
     <Content Include="UserImages\root.png" />
+    <Content Include="Web.Template.config" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

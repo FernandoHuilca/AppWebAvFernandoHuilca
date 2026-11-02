@@ -53,17 +53,23 @@ AppWebAvFernandoHuilca/
 
 1. Abre `bd/BDD_PoliMusic.sql` en **SSMS / Azure Data Studio** (o `sqlcmd`)
    sobre `localhost` y ejecútalo completo.
-2. Crea el login/usuario `usr_polimusic` con contraseña `Politecnica1`
-   (ya lo hace el script) y todas las tablas del esquema original,
-   **sin tablas adicionales**.
+2. Crea el login/usuario `usr_polimusic` con tu contraseña (el script original
+   la define; **ese script NO está en el repositorio** — ver nota de seguridad
+   abajo) y todas las tablas del esquema original, **sin tablas adicionales**.
 
-Credenciales de prueba (semilla del script):
+> ⚠️ **Nota de seguridad**: `config/dbConnection.asp` (con credenciales reales)
+> y `bd/BDD_PoliMusic.sql` están **excluidos del repositorio** por contener
+> contraseñas. Existen versiones plantilla sin credenciales:
+> `config/dbConnection.Template.asp` (cópiala, renómbrala y pon tus datos).
+
+Credenciales de prueba (semilla del script, definidas solo en tu BD local —
+no se publican en el repo):
 
 | Usuario     | Contraseña | Rol  |
 |-------------|------------|------|
-| `userAdmin` | `12345678` | ADMIN (USER_TYPE = 1) |
-| `userNormal`| `12345678` | USER  (USER_TYPE = 0) |
-| `username1` | `12345678` | USER  (contraseña guardada como SHA-1) |
+| `userAdmin` | *está en tu BD local* | ADMIN (USER_TYPE = 1) |
+| `userNormal`| *está en tu BD local* | USER  (USER_TYPE = 0) |
+| `username1` | *está en tu BD local* | USER  (contraseña guardada como SHA-1) |
 
 El login soporta **ambas formas**: contraseñas planas y contraseñas almacenadas
 como hash `SHA1` en mayúsculas, comparadas con
@@ -96,8 +102,11 @@ todo funciona igual: las rutas de recursos se calculan dinámicamente con
 Se edita **una sola línea** en `config/dbConnection.asp`:
 
 ```vb
-Const DB_CONN_STRING = "Provider=SQLNCLI11;Server=localhost;Database=BDD_PoliMusic;Uid=usr_polimusic;Pwd=Politecnica1;"
+Const DB_CONN_STRING = "Provider=SQLNCLI11;Server=localhost;Database=BDD_PoliMusic;Uid=USUARIO_BD;Pwd=CONTRASENA_BD;"
 ```
+
+Reemplaza `USUARIO_BD` / `CONTRASENA_BD` en tu copia **local** de
+`dbConnection.asp` (excluida del repo por seguridad).
 
 Alternativas listadas en el mismo archivo (descomentar una):
 

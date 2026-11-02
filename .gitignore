@@ -80,3 +80,11 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 .DS_Store
+
+################################################################################
+# Archivos con credenciales reales - EXCLUIDOS del repositorio
+# (existe una versión *.Template.* sin contraseñas para clonar y configurar)
+################################################################################
+WebAppPoliMusicV2/Web.config
+Clone Spotify/config/dbConnection.asp
+Clone Spotify/bd/BDD_PoliMusic.sql
